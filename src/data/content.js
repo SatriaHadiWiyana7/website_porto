@@ -3,18 +3,32 @@ export const content = {
     nav: {
       services: "Layanan", portfolio: "Portofolio", workflow: "Alur Kerja", reviews: "Ulasan", faq: "FAQ"
     },
+    footer: {
+      desc: "Merancang ekosistem perangkat lunak cerdas secara end-to-end. Mari terhubung dan bangun solusi inovatif bersama.",
+      copyright: "© 2026 Satria Hadi Wiyana. Hak Cipta Dilindungi."
+    },
     booking: {
       badge: "Mari Berkolaborasi",
       title: "Jadwalkan Sesi Anda",
       desc: "Pilih tanggal yang sesuai untuk membahas arsitektur proyek, optimasi sistem, atau peluang freelance lainnya.",
+      profileRole: "AI/ML ENGINEER & FULL-STACK DEVELOPER",
+      sessionTitle: "Discovery Session",
+      duration: "30 min",
+      webConf: "Detail web conference akan diberikan setelah konfirmasi.",
+      profileDesc: "Selamat datang. Sebagai Machine Learning Engineer & Full-Stack Developer, saya berfokus pada perancangan sistem cerdas end-to-end dengan spesialisasi di bidang NLP, Computer Vision, dan inferensi model lokal untuk menjamin privasi data serta efisiensi biaya. Silakan tentukan jadwal diskusi yang tersedia untuk mengeksplorasi kebutuhan arsitektur AI, optimalisasi sistem, atau skalabilitas produk Anda.",
+      dateLabel: "Pilih Tanggal",
+      timezone: "Zona waktu: Waktu Indonesia Barat (WIB)",
       formName: "Nama Lengkap",
       formEmail: "Alamat Email",
-      formDate: "Pilih Tanggal",
       formMessage: "Deskripsi Proyek / Topik Diskusi",
+      formMessagePlaceholder: "Deskripsikan kebutuhan AI / Web Anda di sini...",
       btnSubmit: "Kirim Jadwal",
       btnLoading: "Mengirim...",
       successMsg: "Pesan terkirim! Saya akan segera menghubungi Anda untuk konfirmasi.",
-      errorMsg: "Gagal mengirim pesan. Silakan coba lagi atau hubungi via email langsung."
+      errorMsg: "Gagal mengirim pesan. Silakan coba lagi atau hubungi via email langsung.",
+      alertDate: "Silakan pilih tanggal pada kalender terlebih dahulu!",
+      maintenanceTitle: "Sistem Sedang Maintenance",
+      maintenanceDesc: "Mohon maaf, sistem penjadwalan otomatis sedang dalam pemeliharaan atau telah mencapai batas kuota layanan. Silakan hubungi saya langsung melalui email: satriahadiwiyana7@gmail.com"
     },
     hero: {
       badge: "AI/ML ENGINEER & FULL-STACK DEVELOPER",
@@ -62,43 +76,43 @@ export const content = {
       },
       {
         title: "TryLab AI Mobile Tester",
-        desc: "Menghadirkan otomatisasi pengujian usability aplikasi mobile melalui agen AI otonom. Berbekal Vision-Language Models, sistem ini mampu menginterpretasikan elemen visual antarmuka dan bernavigasi secara mandiri untuk menyusun laporan interaksi tanpa campur tangan manusia[cite: 1].",
+        desc: "Menghadirkan otomatisasi pengujian usability aplikasi mobile melalui agen AI otonom. Berbekal Vision-Language Models, sistem ini mampu menginterpretasikan elemen visual antarmuka dan bernavigasi secara mandiri untuk menyusun laporan interaksi tanpa campur tangan manusia.",
         tech: ["Python", "Llama 3.2 Vision", "Qwen-VL", "VLM"],
         link: "#"
       },
       {
         title: "Urban Traffic AI Coordinator",
-        desc: "Memecahkan kompleksitas kemacetan perkotaan melalui arsitektur kecerdasan buatan hierarkis. Sistem ini membangun representasi jaringan secara global untuk memberikan direktif strategis dan mengoptimalkan aliran kendaraan antartitik secara dinamis[cite: 3].",
+        desc: "Memecahkan kompleksitas kemacetan perkotaan melalui arsitektur kecerdasan buatan hierarkis. Sistem ini membangun representasi jaringan secara global untuk memberikan direktif strategis dan mengoptimalkan aliran kendaraan antartitik secara dinamis.",
         tech: ["Reinforcement Learning", "GNN", "PPO", "Python"],
         link: "#"
       },
       {
         title: "FinTime (Financial Time Machine)",
-        desc: "Merevolusi kebiasaan finansial masa muda lewat platform yang memprediksi kondisi keuangan masa depan. Memadukan model time-series forecasting dan klasifikasi pintar untuk merumuskan rekomendasi bijak dengan intervensi avatar reaktif[cite: 4].",
+        desc: "Merevolusi kebiasaan finansial masa muda lewat platform yang memprediksi kondisi keuangan masa depan. Memadukan model time-series forecasting dan klasifikasi pintar untuk merumuskan rekomendasi bijak dengan intervensi avatar reaktif.",
         tech: ["FastAPI", "XGBoost", "NLP", "scikit-learn"],
         link: "#"
       },
       {
         title: "M-RAG Financial Analyst",
-        desc: "Mengekstraksi wawasan berharga dari teks, tabel angka, hingga grafik pada dokumen bisnis. Sistem analisis multimodal ini merangkum data berskala besar menjadi jawaban presisi yang dilengkapi strategi penjagaan validitas informasi yang ketat[cite: 2].",
+        desc: "Mengekstraksi wawasan berharga dari teks, tabel angka, hingga grafik pada dokumen bisnis. Sistem analisis multimodal ini merangkum data berskala besar menjadi jawaban presisi yang dilengkapi strategi penjagaan validitas informasi yang ketat.",
         tech: ["Multimodal RAG", "ChromaDB", "LLaVA", "Python"],
         link: "#"
       },
       {
         title: "AgriRAG Smart Agriculture",
-        desc: "Mewujudkan panduan agrikultur presisi dengan sistem kecerdasan buatan terintegrasi. Platform ini mendiagnosis anomali tanaman dan meracik rekomendasi perawatan secara akurat berbekal basis data vektor dan model bahasa lokal[cite: 1].",
+        desc: "Mewujudkan panduan agrikultur presisi dengan sistem kecerdasan buatan terintegrasi. Platform ini mendiagnosis anomali tanaman dan meracik rekomendasi perawatan secara akurat berbekal basis data vektor dan model bahasa lokal.",
         tech: ["LangChain", "RAG", "Local LLM", "Vector DB"],
         link: "#"
       },
       {
         title: "CekKontrak Legal NLP",
-        desc: "Mengotomatisasi peninjauan kontrak kerja sama skala bisnis untuk memetakan anomali teks dan meminimalkan risiko tersembunyi. Model ini dilatih khusus untuk mengekstraksi informasi krusial dan menganalisis klausul perjanjian secara instan[cite: 1].",
+        desc: "Mengotomatisasi peninjauan kontrak kerja sama skala bisnis untuk memetakan anomali teks dan meminimalkan risiko tersembunyi. Model ini dilatih khusus untuk mengekstraksi informasi krusial dan menganalisis klausul perjanjian secara instan.",
         tech: ["Python", "NLP", "Machine Learning"],
         link: "#"
       },
       {
         title: "SIMBATRAS Ecosystem",
-        desc: "Membangun ekosistem platform manajemen lingkungan secara end-to-end. Dilengkapi dengan antarmuka dinamis untuk otomatisasi pelacakan saldo, komputasi laporan finansial, dan pemeliharaan integritas data berkinerja tinggi[cite: 1].",
+        desc: "Membangun ekosistem platform manajemen lingkungan secara end-to-end. Dilengkapi dengan antarmuka dinamis untuk otomatisasi pelacakan saldo, komputasi laporan finansial, dan pemeliharaan integritas data berkinerja tinggi.",
         tech: ["Laravel", "React", "PHP", "JavaScript"],
         link: "#"
       }
@@ -133,18 +147,32 @@ export const content = {
     nav: {
       services: "Services", portfolio: "Portfolio", workflow: "Workflow", reviews: "Reviews", faq: "FAQ"
     },
+    footer: {
+      desc: "Designing end-to-end intelligent software ecosystems. Let's connect and build innovative solutions together.",
+      copyright: "© 2026 Satria Hadi Wiyana. All Rights Reserved."
+    },
     booking: {
       badge: "Let's Collaborate",
       title: "Schedule Your Session",
       desc: "Choose a suitable date to discuss project architecture, system optimization, or other freelance opportunities.",
+      profileRole: "AI/ML ENGINEER & FULL-STACK DEVELOPER",
+      sessionTitle: "Discovery Session",
+      duration: "30 min",
+      webConf: "Web conferencing details provided upon confirmation.",
+      profileDesc: "Welcome. As a Machine Learning Engineer & Full-Stack Developer, I focus on designing end-to-end intelligent systems with specialties in NLP, Computer Vision, and local model inference to ensure data privacy and cost efficiency. Please schedule an available discussion slot to explore your AI architecture needs, system optimization, or product scalability.",
+      dateLabel: "Select a Date",
+      timezone: "Time zone: Western Indonesia Time (WIB)",
       formName: "Full Name",
       formEmail: "Email Address",
-      formDate: "Select Date",
       formMessage: "Project Description / Discussion Topic",
+      formMessagePlaceholder: "Describe your AI / Web needs here...",
       btnSubmit: "Send Request",
       btnLoading: "Sending...",
       successMsg: "Message sent! I will contact you shortly to confirm the details.",
-      errorMsg: "Failed to send message. Please try again or contact me directly via email."
+      errorMsg: "Failed to send message. Please try again or contact me directly via email.",
+      alertDate: "Please select a date from the calendar first!",
+      maintenanceTitle: "System Under Maintenance",
+      maintenanceDesc: "Apologies, the automated scheduling system is currently under maintenance or has reached its service quota. Please contact me directly via email: satriahadiwiyana7@gmail.com"
     },
     hero: {
       badge: "AI/ML ENGINEER & FULL-STACK DEVELOPER",
