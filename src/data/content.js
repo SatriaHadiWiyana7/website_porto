@@ -17,7 +17,7 @@ export const content = {
       errorMsg: "Gagal mengirim pesan. Silakan coba lagi atau hubungi via email langsung."
     },
     hero: {
-      badge: "MACHINE LEARNING & FULL-STACK DEV",
+      badge: "AI/ML ENGINEER & FULL-STACK DEVELOPER",
       titleStatic1: "Optimasi",
       titleStatic2: "tanpa kompromi.",
       dynamicWords: ["Model AI", "Sistem Web", "Fitur NLP", "LLM Lokal", "Agen Visual"],
@@ -31,23 +31,77 @@ export const content = {
       items: [
         { value: "3+", label: "Arsitektur AI", desc: "Implementasi VLM, arsitektur RAG, dan model Reinforcement Learning dalam proyek terapan." },
         { value: "100%", label: "Fokus Stabilitas", desc: "Memprioritaskan integritas data dengan pembaruan dinamis tanpa manipulasi berisiko." },
-        { value: "5+", label: "Tech Stack", desc: "Penguasaan mendalam pada ekosistem Python, React, Laravel, dan integrasi API lokal." },
-        { value: "100+", label: "Jam Training", desc: "Dedikasi waktu dalam inferensi model LLM lokal dan pengujian antarmuka otomatis." }
+        { value: "15+", label: "Tech Stack", desc: "Penguasaan mendalam ekosistem Python, React, Laravel, ML Frameworks, dan integrasi API lokal." },
+        { value: "500+", label: "Jam Eksperimen", desc: "Dedikasi waktu dalam inferensi model LLM lokal dan otomatisasi agen AI." }
       ]
     },
     servicesTitle: "Layanan Konsultasi & Pengembangan",
     services: [
-      { title: "Integrasi AI & Local LLM", desc: "Konsultasi dan implementasi model Kecerdasan Buatan (NLP, Computer Vision) ke dalam sistem bisnis Anda. Spesialisasi optimasi model lokal (on-premise) untuk efisiensi dan privasi data." },
-      { title: "Full-Stack Web Development", desc: "Pembuatan aplikasi web kustom yang responsif dan skalabel dari nol. Menangani arsitektur backend yang kompleks hingga antarmuka frontend yang modern." },
-      { title: "Automasi Sistem & Pengujian", desc: "Pengembangan agen otonom dan skrip cerdas untuk web scraping, automasi alur kerja, hingga pengujian UI aplikasi otomatis menggunakan Vision-Language Models." }
-    ],
+    { 
+      title: "Integrasi AI & Local LLM", 
+      desc: "Konsultasi dan implementasi kecerdasan buatan (NLP & Computer Vision) dengan arsitektur RAG canggih. Spesialisasi pada optimasi model lokal (on-premise) untuk analisis multimodal dan ekstraksi dokumen tanpa mengorbankan privasi data." 
+    },
+    { 
+      title: "Full-Stack Web Development", 
+      desc: "Rancang bangun ekosistem aplikasi web kustom yang responsif dan skalabel dari nol. Menangani arsitektur backend yang kompleks, integrasi API, hingga pemeliharaan integritas data finansial dengan antarmuka frontend yang modern." 
+    },
+    { 
+      title: "Automasi Sistem & Pengujian", 
+      desc: "Pengembangan agen AI otonom dan skrip cerdas untuk memotong repetisi alur kerja. Mencakup solusi web scraping tingkat lanjut hingga otomatisasi pengujian usability antarmuka aplikasi secara mandiri menggunakan Vision-Language Models." 
+    }
+  ],
     projectsBadge: "Rekam Jejak",
     projectsTitle: "Studi Kasus & Eksekusi Sistem",
     projectsDesc: "Menerjemahkan arsitektur kompleks menjadi solusi digital yang terukur. Berikut adalah beberapa implementasi dari optimasi model lokal hingga sistem manajemen terpadu.",
     projects: [
-      { title: "M-RAG Legal Assistant", desc: "Mendefinisikan ulang ekstraksi dokumen hukum tanpa OCR. Dibangun menggunakan arsitektur Parent-Child Retriever dan Vision-Language Models terintegrasi.", tech: ["Python", "Llama 3.2 Vision", "NLP", "RAG"], link: "#" },
-      { title: "SIMBATRAS Dashboard", desc: "Sistem informasi manajemen bank sampah berbasis web. Dirancang untuk stabilitas data tingkat tinggi dengan visualisasi metrik yang akurat.", tech: ["React", "Laravel", "Tailwind CSS", "MySQL"], link: "#" },
-      { title: "Synthetic User Testing Agent", desc: "Inovasi pengujian fungsionalitas aplikasi Android. Memanfaatkan agen otonom untuk mengeksekusi navigasi UI secara otomatis layaknya manusia.", tech: ["Python", "Computer Vision", "ADB", "Automation"], link: "#" }
+      { 
+        title: "M-RAG Legal Assistant", 
+        desc: "Mendefinisikan ulang ekstraksi dokumen hukum tanpa OCR. Dibangun menggunakan arsitektur Parent-Child Retriever dan Vision-Language Models terintegrasi.", 
+        tech: ["Python", "Llama 3.2 Vision", "NLP", "RAG"], 
+        link: "#" 
+      },
+      {
+        title: "TryLab AI Mobile Tester",
+        desc: "Menghadirkan otomatisasi pengujian usability aplikasi mobile melalui agen AI otonom. Berbekal Vision-Language Models, sistem ini mampu menginterpretasikan elemen visual antarmuka dan bernavigasi secara mandiri untuk menyusun laporan interaksi tanpa campur tangan manusia[cite: 1].",
+        tech: ["Python", "Llama 3.2 Vision", "Qwen-VL", "VLM"],
+        link: "#"
+      },
+      {
+        title: "Urban Traffic AI Coordinator",
+        desc: "Memecahkan kompleksitas kemacetan perkotaan melalui arsitektur kecerdasan buatan hierarkis. Sistem ini membangun representasi jaringan secara global untuk memberikan direktif strategis dan mengoptimalkan aliran kendaraan antartitik secara dinamis[cite: 3].",
+        tech: ["Reinforcement Learning", "GNN", "PPO", "Python"],
+        link: "#"
+      },
+      {
+        title: "FinTime (Financial Time Machine)",
+        desc: "Merevolusi kebiasaan finansial masa muda lewat platform yang memprediksi kondisi keuangan masa depan. Memadukan model time-series forecasting dan klasifikasi pintar untuk merumuskan rekomendasi bijak dengan intervensi avatar reaktif[cite: 4].",
+        tech: ["FastAPI", "XGBoost", "NLP", "scikit-learn"],
+        link: "#"
+      },
+      {
+        title: "M-RAG Financial Analyst",
+        desc: "Mengekstraksi wawasan berharga dari teks, tabel angka, hingga grafik pada dokumen bisnis. Sistem analisis multimodal ini merangkum data berskala besar menjadi jawaban presisi yang dilengkapi strategi penjagaan validitas informasi yang ketat[cite: 2].",
+        tech: ["Multimodal RAG", "ChromaDB", "LLaVA", "Python"],
+        link: "#"
+      },
+      {
+        title: "AgriRAG Smart Agriculture",
+        desc: "Mewujudkan panduan agrikultur presisi dengan sistem kecerdasan buatan terintegrasi. Platform ini mendiagnosis anomali tanaman dan meracik rekomendasi perawatan secara akurat berbekal basis data vektor dan model bahasa lokal[cite: 1].",
+        tech: ["LangChain", "RAG", "Local LLM", "Vector DB"],
+        link: "#"
+      },
+      {
+        title: "CekKontrak Legal NLP",
+        desc: "Mengotomatisasi peninjauan kontrak kerja sama skala bisnis untuk memetakan anomali teks dan meminimalkan risiko tersembunyi. Model ini dilatih khusus untuk mengekstraksi informasi krusial dan menganalisis klausul perjanjian secara instan[cite: 1].",
+        tech: ["Python", "NLP", "Machine Learning"],
+        link: "#"
+      },
+      {
+        title: "SIMBATRAS Ecosystem",
+        desc: "Membangun ekosistem platform manajemen lingkungan secara end-to-end. Dilengkapi dengan antarmuka dinamis untuk otomatisasi pelacakan saldo, komputasi laporan finansial, dan pemeliharaan integritas data berkinerja tinggi[cite: 1].",
+        tech: ["Laravel", "React", "PHP", "JavaScript"],
+        link: "#"
+      }
     ],
     processBadge: "Workflow",
     processTitle: "Bagaimana Saya Bekerja",
@@ -93,7 +147,7 @@ export const content = {
       errorMsg: "Failed to send message. Please try again or contact me directly via email."
     },
     hero: {
-      badge: "MACHINE LEARNING & FULL-STACK DEV",
+      badge: "AI/ML ENGINEER & FULL-STACK DEVELOPER",
       titleStatic1: "Optimizing",
       titleStatic2: "without compromise.",
       dynamicWords: ["AI Models", "Web Systems", "NLP Features", "Local LLMs", "Vision Agents"],
@@ -105,25 +159,95 @@ export const content = {
       badge: "Measurable Performance",
       title: "Real Impact Created.",
       items: [
-        { value: "3+", label: "AI Architectures", desc: "Implementation of VLM, RAG architectures, and Reinforcement Learning in applied projects." },
-        { value: "100%", label: "Stability Focus", desc: "Prioritizing data integrity with dynamic record updating without risky manipulation." },
-        { value: "5+", label: "Tech Stack", desc: "In-depth mastery of Python, React, Laravel ecosystems, and local API integration." },
-        { value: "100+", label: "Training Hours", desc: "Dedicated time in local LLM inference and automated interface testing." }
+        { 
+          value: "3+", 
+          label: "AI Architectures", 
+          desc: "Implementation of VLMs, RAG architectures, and Reinforcement Learning models across applied projects." 
+        },
+        { 
+          value: "100%", 
+          label: "Stability Focus", 
+          desc: "Prioritizing strict data integrity through dynamic updates without high-risk manipulations." 
+        },
+        { 
+          value: "15+", 
+          label: "Tech Stack", 
+          desc: "Deep mastery across Python, React, Laravel ecosystems, ML frameworks, and local API integration." 
+        },
+        { 
+          value: "500+", 
+          label: "Experiment Hours", 
+          desc: "Dedicated hours spent on local LLM inference, fine-tuning evaluation, and autonomous automation." 
+        }
       ]
     },
     servicesTitle: "Consulting & Development Services",
     services: [
-      { title: "AI & Local LLM Integration", desc: "Consultation and implementation of Artificial Intelligence models (NLP, Computer Vision) into your business systems. Specializing in local model (on-premise) optimization." },
-      { title: "Full-Stack Web Development", desc: "Building responsive and scalable custom web applications from scratch. Handling complex backend architectures to modern, interactive frontend interfaces." },
-      { title: "System Automation & Testing", desc: "Development of autonomous agents and smart scripts for web scraping, workflow automation, and automated UI testing using Vision-Language Models." }
+      { 
+        title: "AI & Local LLM Integration", 
+        desc: "Consulting and deployment of artificial intelligence (NLP & Computer Vision) using advanced RAG architectures. Specialized in optimizing on-premise local models for multimodal analysis and document extraction while safeguarding data privacy[cite: 1, 2]." 
+      },
+      { 
+        title: "Full-Stack Web Development", 
+        desc: "End-to-end engineering of responsive and scalable custom web applications built from scratch[cite: 1]. Handling complex backend architectures, API integrations, and rigorous data integrity with modern frontends[cite: 1, 4]." 
+      },
+      { 
+        title: "System Automation & Testing", 
+        desc: "Development of autonomous AI agents and intelligent scripts designed to eliminate repetitive workflows[cite: 1]. Providing advanced web scraping solutions and hands-free usability UI testing driven by Vision-Language Models[cite: 1]." 
+      }
     ],
     projectsBadge: "Track Record",
     projectsTitle: "Case Studies & Execution",
     projectsDesc: "Translating complex architectures into scalable digital solutions. Here are some implementations from local model optimization to integrated management systems.",
     projects: [
-      { title: "M-RAG Legal Assistant", desc: "Redefining legal document extraction without OCR. Built using Parent-Child Retriever architecture and integrated Vision-Language Models.", tech: ["Python", "Llama 3.2 Vision", "NLP", "RAG"], link: "#" },
-      { title: "SIMBATRAS Dashboard", desc: "Web-based waste bank management information system. Designed for high-level data stability with accurate metric visualization.", tech: ["React", "Laravel", "Tailwind CSS", "MySQL"], link: "#" },
-      { title: "Synthetic User Testing Agent", desc: "Android app functionality testing innovation. Utilizing autonomous agents to execute UI navigation automatically like a human.", tech: ["Python", "Computer Vision", "ADB", "Automation"], link: "#" }
+      { 
+        title: "M-RAG Legal Assistant", 
+        desc: "Redefining legal document extraction without relying on traditional OCR. Built using a Parent-Child Retriever architecture integrated with Vision-Language Models.", 
+        tech: ["Python", "Llama 3.2 Vision", "NLP", "RAG"], 
+        link: "#" 
+      },
+      {
+        title: "TryLab AI Mobile Tester",
+        desc: "Delivering mobile app usability testing automation through autonomous AI agents. Empowered by Vision-Language Models, the system interprets visual interface elements and navigates independently to generate interaction reports without human intervention.",
+        tech: ["Python", "Llama 3.2 Vision", "Qwen-VL", "VLM"],
+        link: "#"
+      },
+      {
+        title: "Urban Traffic AI Coordinator",
+        desc: "Solving complex urban traffic congestion through a hierarchical artificial intelligence architecture. This system builds a global network representation to provide strategic directives and dynamically optimize vehicle flow between nodes.",
+        tech: ["Reinforcement Learning", "GNN", "PPO", "Python"],
+        link: "#"
+      },
+      {
+        title: "FinTime (Financial Time Machine)",
+        desc: "Revolutionizing youth financial habits through a platform that predicts future financial conditions. It combines time-series forecasting models and smart classification to formulate wise recommendations with reactive avatar interventions.",
+        tech: ["FastAPI", "XGBoost", "NLP", "scikit-learn"],
+        link: "#"
+      },
+      {
+        title: "M-RAG Financial Analyst",
+        desc: "Extracting valuable insights from text, numerical tables, and charts within business documents. This multimodal analysis system summarizes large-scale data into precise answers equipped with strict information validity preservation strategies.",
+        tech: ["Multimodal RAG", "ChromaDB", "LLaVA", "Python"],
+        link: "#"
+      },
+      {
+        title: "AgriRAG Smart Agriculture",
+        desc: "Enabling precision agriculture guidance with an integrated artificial intelligence system. The platform diagnoses crop anomalies and generates accurate treatment recommendations backed by a vector database and local language models.",
+        tech: ["LangChain", "RAG", "Local LLM", "Vector DB"],
+        link: "#"
+      },
+      {
+        title: "CekKontrak Legal NLP",
+        desc: "Automating business-scale contract reviews to map text anomalies and minimize hidden risks. This model is specifically trained to extract crucial information and instantly analyze agreement clauses.",
+        tech: ["Python", "NLP", "Machine Learning"],
+        link: "#"
+      },
+      {
+        title: "SIMBATRAS Ecosystem",
+        desc: "Building an end-to-end environmental management platform ecosystem. Equipped with a dynamic interface for automated balance tracking, financial report computation, and high-performance data integrity maintenance.",
+        tech: ["Laravel", "React", "PHP", "JavaScript"],
+        link: "#"
+      }
     ],
     processBadge: "Workflow",
     processTitle: "How I Work",
