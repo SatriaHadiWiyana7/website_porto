@@ -1,30 +1,124 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLang } from '../context/LangContext';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const { lang, toggleLang } = useLang();
+  const { lang, setLang } = useLang();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Efek untuk mendeteksi scroll dan mengubah latar belakang Navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Daftar menu yang disesuaikan dengan struktur komponen kita
+  const navLinks = [
+    { name: lang === 'id' ? 'Layanan' : 'Services', href: '#services' },
+    { name: lang === 'id' ? 'Portofolio' : 'Portfolio', href: '#projects' },
+    { name: lang === 'id' ? 'Alur Kerja' : 'Workflow', href: '#process' },
+    { name: lang === 'id' ? 'Ulasan' : 'Reviews', href: '#testimonial' },
+    { name: 'FAQ', href: '#faq' },
+  ];
 
   return (
-    <motion.nav 
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 w-full z-50 px-6 py-4 backdrop-blur-md bg-white/80 border-b border-slate-100"
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+      }`}
     >
-      <div className="max-w-5xl mx-auto flex justify-between items-center">
-        <span className="font-sans font-black text-slate-900 text-xl tracking-tighter">
-          SHW.
-        </span>
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        
+        {/* Logo */}
+        <a href="#" className="text-2xl font-black text-slate-900 tracking-tighter">
+          SHW<span className="text-[#0ea5e9]">.</span>
+        </a>
 
-        <div className="flex items-center gap-4">
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link, i) => (
+            <a 
+              key={i} 
+              href={link.href} 
+              className="text-sm font-bold text-slate-600 hover:text-[#0ea5e9] transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        {/* Action Buttons Desktop */}
+        <div className="hidden md:flex items-center gap-6">
+          
+          {/* Tombol Toggle Bahasa (Premium UI) */}
           <button 
-            onClick={toggleLang} 
-            className="font-mono text-xs font-bold px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-[#0ea5e9] hover:text-white transition-colors shadow-sm"
+            onClick={() => setLang(lang === 'id' ? 'en' : 'id')}
+            className="flex items-center bg-slate-100 rounded-full p-1 cursor-pointer border border-slate-200"
+            aria-label="Toggle Language"
           >
-            {lang === 'id' ? 'EN' : 'ID'}
+            <div className={`px-3 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${
+              lang === 'id' ? 'bg-slate-900 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'
+            }`}>
+              ID
+            </div>
+            <div className={`px-3 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${
+              lang === 'en' ? 'bg-slate-900 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'
+            }`}>
+              EN
+            </div>
           </button>
         </div>
+
+        {/* Hamburger Menu Mobile */}
+        <button 
+          className="md:hidden text-slate-900"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
       </div>
-    </motion.nav>
+
+      {/* Dropdown Menu Mobile */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4 md:hidden"
+          >
+            {navLinks.map((link, i) => (
+              <a 
+                key={i} 
+                href={link.href} 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-lg font-bold text-slate-600 hover:text-[#0ea5e9]"
+              >
+                {link.name}
+              </a>
+            ))}
+            
+            <div className="h-px bg-slate-100 my-2"></div>
+            
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-slate-600">Bahasa</span>
+              <button 
+                onClick={() => setLang(lang === 'id' ? 'en' : 'id')}
+                className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200"
+              >
+                <div className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${lang === 'id' ? 'bg-slate-900 text-white' : 'text-slate-400'}`}>ID</div>
+                <div className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-slate-900 text-white' : 'text-slate-400'}`}>EN</div>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 }
