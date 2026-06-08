@@ -1,57 +1,90 @@
-import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
 import { useLang } from '../context/LangContext';
 import { content } from '../data/content';
+import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
   const { lang } = useLang();
   const t = content[lang];
 
+  // Menduplikasi array proyek agar animasi looping tidak pernah putus
+  const duplicatedProjects = [...t.projects, ...t.projects, ...t.projects, ...t.projects];
+
   return (
-    <section className="py-24 px-6 max-w-5xl mx-auto">
-      <motion.h3 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-12 flex items-center gap-4"
-      >
-        <span className="w-8 h-[1px] bg-emerald-500 hidden sm:block"></span>
-        {t.projectsTitle}
-      </motion.h3>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {t.projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group flex flex-col bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-500 transition-colors">
-                {project.title}
-              </h4>
-              <a href={project.link} className="text-slate-400 hover:text-emerald-500 transition-colors">
-                <ExternalLink size={18} />
-              </a>
-            </div>
-            
-            <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
-              {project.desc}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tech.map((techItem, i) => (
-                <span key={i} className="text-xs font-mono px-2 py-1 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded">
-                  {techItem}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+    <section className="py-32 bg-slate-50 border-y border-slate-200 overflow-hidden relative">
+      
+      {/* Header Bagian */}
+      <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
+        <span className="text-[#0ea5e9] font-mono text-sm font-bold tracking-widest uppercase">
+          Rekam Jejak
+        </span>
+        <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-4 tracking-tight">
+          Studi Kasus & Eksekusi Sistem
+        </h2>
+        <p className="text-slate-500 mt-4 max-w-2xl mx-auto leading-relaxed">
+          Menerjemahkan arsitektur kompleks menjadi solusi digital yang terukur. Berikut adalah beberapa implementasi dari optimasi model lokal hingga sistem manajemen terpadu.
+        </p>
       </div>
+
+      {/* 
+        Area Korsel Berputar 
+        Ditambahkan max-w-7xl dan mx-auto agar tidak melebar tanpa batas di monitor besar
+      */}
+      <div className="max-w-7xl mx-auto relative w-full flex overflow-hidden py-8 pause-on-hover px-4">
+        
+        {/* Efek Gradasi (Vignette) disesuaikan ukurannya */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+        {/* Container yang bergerak (gap diperkecil menjadi gap-6) */}
+        <div className="flex gap-6 w-max animate-infinite-scroll">
+          {duplicatedProjects.map((project, index) => (
+            <div
+              key={index}
+              // Lebar kotak diperkecil menjadi 360px di desktop agar lebih proporsional
+              className="group w-[300px] md:w-[360px] shrink-0 bg-white rounded-2xl p-8 border-2 border-slate-100 hover:border-[#0ea5e9] shadow-sm hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full cursor-pointer"
+            >
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-xl font-bold text-slate-900 leading-snug group-hover:text-[#0ea5e9] transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <a href={project.link} className="text-slate-400 group-hover:text-[#0ea5e9] transition-colors">
+                  <ExternalLink size={20} />
+                </a>
+              </div>
+              
+              <p className="text-slate-500 mb-8 leading-relaxed text-sm flex-grow">
+                {project.desc}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((tech, i) => (
+                  <span 
+                    key={i} 
+                    className="px-3 py-1.5 bg-slate-50 border border-slate-100 text-slate-600 text-xs font-mono rounded-md font-medium group-hover:bg-sky-50 group-hover:text-sky-700 group-hover:border-sky-100 transition-colors duration-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes infinite-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+          animation: infinite-scroll 40s linear infinite;
+          will-change: transform;
+        }
+        .pause-on-hover:hover .animate-infinite-scroll {
+          animation-play-state: paused !important;
+        }
+      `}</style>
+      
     </section>
   );
 }
