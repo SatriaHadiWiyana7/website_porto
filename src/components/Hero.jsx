@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLang } from '../context/LangContext';
 import { content } from '../data/content';
-import profileImg from '../assets/Casual.avif'; 
+import profileImg from '../assets/Casual.webp'; 
 
 export default function Hero() {
   const { lang } = useLang();
