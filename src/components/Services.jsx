@@ -14,14 +14,16 @@ export default function Services() {
   };
 
   return (
-    <section className="py-32 px-6 max-w-5xl mx-auto bg-white">
+    <section id="services" className="py-32 px-6 max-w-5xl mx-auto bg-white">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="flex flex-col items-center text-center mb-16"
       >
-        <span className="text-[#0ea5e9] font-mono text-sm font-bold mb-3 tracking-widest uppercase">Layanan</span>
+        <span className="text-[#0ea5e9] font-mono text-sm font-bold mb-3 tracking-widest uppercase">
+          {t.nav.services}
+        </span>
         <h3 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
           {t.servicesTitle}
         </h3>

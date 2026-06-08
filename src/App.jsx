@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { LangProvider } from './context/LangContext';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -11,35 +9,38 @@ import Process from './components/Process';
 import Testimonial from './components/Testimonial';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import Booking from './components/Booking';
 
-export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+// IMPORT LANG PROVIDER DI SINI
+import { LangProvider } from './context/LangContext';
+
+function App() {
+  const [loading, setLoading] = useState(true);
 
   return (
+    // BUNGKUS SELURUH APLIKASI DENGAN LANGPROVIDER
     <LangProvider>
-      <div className="min-h-screen bg-white font-sans selection:bg-[#0ea5e9]/30 selection:text-[#0ea5e9] text-slate-900">
-        
-        <AnimatePresence mode="wait">
-          {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-        </AnimatePresence>
-
-        {!isLoading && (
-          <>
-            <Navbar />
-            <main>
-              <Hero />
-              <Stats />
-              <Services />
-              <Projects />
-              <Process />
-              <Testimonial />
-              <FAQ />
-            </main>
-            <Footer />
-          </>
-        )}
-        
-      </div>
+      
+      {/* Preloader tetap menggunakan state loading lokal */}
+      {loading ? (
+        <Preloader onComplete={() => setLoading(false)} />
+      ) : (
+        <div className="w-full min-h-screen font-sans text-slate-900 bg-white">
+          <Navbar />
+          <Hero />
+          <Stats />
+          <Services />
+          <Projects />
+          <Process />
+          <Testimonial />
+          <FAQ />
+          <Booking/>
+          <Footer />
+        </div>
+      )}
+      
     </LangProvider>
   );
 }
+
+export default App;

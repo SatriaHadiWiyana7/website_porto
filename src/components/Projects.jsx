@@ -6,41 +6,31 @@ export default function Projects() {
   const { lang } = useLang();
   const t = content[lang];
 
-  // Menduplikasi array proyek agar animasi looping tidak pernah putus
   const duplicatedProjects = [...t.projects, ...t.projects, ...t.projects, ...t.projects];
 
   return (
-    <section className="py-32 bg-slate-50 border-y border-slate-200 overflow-hidden relative">
-      
-      {/* Header Bagian */}
+    <section id="projects" className="py-32 bg-slate-50 border-y border-slate-200 overflow-hidden relative">
       <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
         <span className="text-[#0ea5e9] font-mono text-sm font-bold tracking-widest uppercase">
-          Rekam Jejak
+          {t.projectsBadge}
         </span>
         <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-4 tracking-tight">
-          Studi Kasus & Eksekusi Sistem
+          {t.projectsTitle}
         </h2>
         <p className="text-slate-500 mt-4 max-w-2xl mx-auto leading-relaxed">
-          Menerjemahkan arsitektur kompleks menjadi solusi digital yang terukur. Berikut adalah beberapa implementasi dari optimasi model lokal hingga sistem manajemen terpadu.
+          {t.projectsDesc}
         </p>
       </div>
 
-      {/* 
-        Area Korsel Berputar 
-        Ditambahkan max-w-7xl dan mx-auto agar tidak melebar tanpa batas di monitor besar
-      */}
       <div className="max-w-7xl mx-auto relative w-full flex overflow-hidden py-8 pause-on-hover px-4">
         
-        {/* Efek Gradasi (Vignette) disesuaikan ukurannya */}
         <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
-        {/* Container yang bergerak (gap diperkecil menjadi gap-6) */}
         <div className="flex gap-6 w-max animate-infinite-scroll">
           {duplicatedProjects.map((project, index) => (
             <div
               key={index}
-              // Lebar kotak diperkecil menjadi 360px di desktop agar lebih proporsional
               className="group w-[300px] md:w-[360px] shrink-0 bg-white rounded-2xl p-8 border-2 border-slate-100 hover:border-[#0ea5e9] shadow-sm hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full cursor-pointer"
             >
               <div className="flex justify-between items-start mb-6">
@@ -84,7 +74,6 @@ export default function Projects() {
           animation-play-state: paused !important;
         }
       `}</style>
-      
     </section>
   );
 }

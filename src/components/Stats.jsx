@@ -1,46 +1,26 @@
 import { motion } from 'framer-motion';
+import { useLang } from '../context/LangContext';
+import { content } from '../data/content';
 
 export default function Stats() {
-  const stats = [
-    { 
-      value: "3+", 
-      label: "Arsitektur AI", 
-      desc: "Implementasi VLM, arsitektur RAG, dan model Reinforcement Learning dalam proyek terapan." 
-    },
-    { 
-      value: "100%", 
-      label: "Fokus Stabilitas", 
-      desc: "Memprioritaskan integritas data dengan pembaruan dinamis tanpa manipulasi berisiko." 
-    },
-    { 
-      value: "5+", 
-      label: "Tech Stack", 
-      desc: "Penguasaan mendalam pada ekosistem Python, React, Laravel, dan integrasi API lokal." 
-    },
-    { 
-      value: "100+", 
-      label: "Jam Training", 
-      desc: "Dedikasi waktu dalam inferensi model LLM lokal dan pengujian antarmuka secara otomatis." 
-    },
-  ];
+  const { lang } = useLang();
+  const t = content[lang].stats;
 
   return (
     <section className="py-24 px-6 bg-slate-50 border-t border-slate-100">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header Stats ala Referensi */}
         <div className="text-center mb-16">
           <span className="text-slate-400 font-mono text-xs font-bold tracking-widest uppercase">
-            Kinerja Terukur
+            {t.badge}
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-3 tracking-tight">
-            Dampak Nyata yang Tercipta.
+            {t.title}
           </h2>
         </div>
 
-        {/* Grid 4 Kartu */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, i) => (
+          {t.items.map((stat, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, y: 30 }}

@@ -1,38 +1,26 @@
 import { motion } from 'framer-motion';
+import { useLang } from '../context/LangContext';
+import { content } from '../data/content';
 
 export default function Process() {
-  const steps = [
-    {
-      num: "01",
-      title: "Diskusi & Pemetaan Data",
-      desc: "Sesi konsultasi untuk memahami visi proyek Anda, merancang arsitektur sistem yang presisi, serta mengidentifikasi kebutuhan infrastruktur dan data sejak awal."
-    },
-    {
-      num: "02",
-      title: "EDA & Integrasi Model",
-      desc: "Fase eksekusi yang mencakup Exploratory Data Analysis (EDA), optimasi model AI lokal, hingga penggabungan logika backend dan antarmuka web yang mulus."
-    },
-    {
-      num: "03",
-      title: "Pengujian & Deployment",
-      desc: "Validasi fungsionalitas menyeluruh menggunakan automasi cerdas (termasuk skrip ADB), diakhiri dengan proses deployment ke environment produksi secara stabil."
-    }
-  ];
+  const { lang } = useLang();
+  const t = content[lang];
 
   return (
-    <section className="py-32 px-6 max-w-6xl mx-auto bg-white">
+    <section id="process" className="py-32 px-6 max-w-6xl mx-auto bg-white">
       <div className="text-center mb-20">
-        <span className="text-[#0ea5e9] font-mono text-sm font-bold tracking-widest uppercase">Workflow</span>
+        <span className="text-[#0ea5e9] font-mono text-sm font-bold tracking-widest uppercase">
+          {t.processBadge}
+        </span>
         <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-4 tracking-tight">
-          Bagaimana Saya Bekerja
+          {t.processTitle}
         </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-        {/* Garis penghubung di belakang angka */}
         <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-slate-100 z-0"></div>
 
-        {steps.map((step, i) => (
+        {t.process.map((step, i) => (
           <motion.div 
             key={i}
             initial={{ opacity: 0, y: 30 }}
