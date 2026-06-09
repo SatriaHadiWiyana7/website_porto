@@ -135,10 +135,22 @@ export const content = {
     faqTitle: "Pertanyaan Umum",
     faqDesc: "Beberapa hal teknis dan operasional yang sering ditanyakan oleh klien.",
     faqs: [
-      { q: "Apakah Anda menerima proyek pembuatan web dari nol?", a: "Ya, saya berpengalaman membangun sistem full-stack mulai dari perancangan database (MySQL), pengembangan backend (Laravel/Python), hingga frontend (React/Tailwind)." },
-      { q: "Bagaimana cara kerja integrasi AI Lokal (On-Premise)?", a: "Saya menggunakan model open-source mutakhir yang di-deploy langsung di komputer/server Anda. Keuntungannya: privasi data 100% terjaga dan tanpa biaya API bulanan." },
-      { q: "Apakah Anda bisa membuat sistem AI untuk membaca dokumen hukum?", a: "Sangat bisa. Saya spesialis dalam membangun sistem Multimodal RAG yang dapat mengekstrak dan menjawab pertanyaan dari dokumen PDF/gambar secara presisi tanpa OCR tradisional." },
-      { q: "Apakah melayani perbaikan pada sistem web yang sudah ada?", a: "Tentu. Berbekal pengalaman Webmaster, saya terbiasa melakukan pemeliharaan, sinkronisasi database, hingga optimasi fitur tanpa mengganggu stabilitas data yang ada." }
+      { 
+        q: "Bagaimana proses konsultasi dan pengembangan proyek berjalan?", 
+        a: "Semuanya dimulai dengan Discovery Session untuk memetakan visi dan kebutuhan arsitektur Anda. Setelah itu, saya akan merancang purwarupa (EDA/UI), mengintegrasikan model AI atau logika backend, hingga tahap pengujian menyeluruh sebelum sistem dideploy ke environment produksi." 
+      },
+      { 
+        q: "Apakah privasi data perusahaan saya terjamin jika menggunakan fitur AI?", 
+        a: "Sangat terjamin. Berbeda dengan layanan API publik, saya berspesialisasi dalam inferensi Local LLM (On-Premise). Model kecerdasan buatan akan dijalankan langsung di dalam server/infrastruktur Anda sendiri, sehingga tidak ada data sensitif yang keluar dari ekosistem perusahaan." 
+      },
+      { 
+        q: "Bisakah Anda mengintegrasikan model AI (seperti RAG atau Vision) ke aplikasi saya yang sudah ada?", 
+        a: "Tentu. Saya dapat merancang microservices atau API kustom (menggunakan Python/FastAPI) yang menjembatani sistem lama Anda dengan kapabilitas AI mutakhir, baik untuk analisis dokumen, pemrosesan bahasa alami (NLP), maupun deteksi visual." 
+      },
+      { 
+        q: "Apakah Anda menerima pembuatan web Full-Stack dari nol tanpa fitur AI?", 
+        a: "Ya, saya memiliki pengalaman luas membangun arsitektur web dari dasar. Mulai dari perancangan struktur database, pengembangan backend (menggunakan ekosistem Laravel atau Python), hingga merancang antarmuka frontend yang responsif dan modern dengan React." 
+      }
     ]
   },
 
@@ -295,10 +307,22 @@ export const content = {
     faqTitle: "Frequently Asked Questions",
     faqDesc: "Some technical and operational things often asked by clients.",
     faqs: [
-      { q: "Do you accept web development projects from scratch?", a: "Yes, I am experienced in building full-stack systems from database design (MySQL), backend development (Laravel/Python), to modern frontend interfaces (React/Tailwind)." },
-      { q: "How does Local AI Integration (On-Premise) work?", a: "I use cutting-edge open-source models deployed directly on your computer/server. The advantage: 100% data privacy is maintained and no monthly API fees." },
-      { q: "Can you build an AI system to read legal documents?", a: "Absolutely. I specialize in building Multimodal RAG systems that can extract and answer questions from PDF documents/images precisely without traditional OCR." },
-      { q: "Do you provide maintenance for existing web systems?", a: "Certainly. Armed with Webmaster experience, I am used to performing maintenance, database synchronization, to feature optimization without disrupting data stability." }
+      { 
+        q: "How does the consulting and project development process work?", 
+        a: "Everything starts with a Discovery Session to map out your vision and architectural needs. Following that, I design prototypes (EDA/UI), integrate AI models or backend logic, and conduct comprehensive testing before deploying the system to production." 
+      },
+      { 
+        q: "Is my company's data privacy guaranteed when using AI features?", 
+        a: "Absolutely. Unlike public API services, I specialize in Local LLM inference (On-Premise). The artificial intelligence models run directly within your own server/infrastructure, ensuring no sensitive data ever leaves your company's ecosystem." 
+      },
+      { 
+        q: "Can you integrate AI models (like RAG or Vision) into my existing application?", 
+        a: "Certainly. I can design custom microservices or APIs (using Python/FastAPI) that bridge your legacy systems with cutting-edge AI capabilities, whether for document analysis, Natural Language Processing (NLP), or visual detection." 
+      },
+      { 
+        q: "Do you build Full-Stack web applications from scratch without AI features?", 
+        a: "Yes, I have extensive experience building web architectures from the ground up. This includes database structure design, backend development (using Laravel or Python ecosystems), and crafting responsive, modern frontend interfaces with React." 
+      }
     ]
   }
 };
