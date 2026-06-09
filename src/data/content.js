@@ -213,15 +213,15 @@ export const content = {
     services: [
       { 
         title: "AI & Local LLM Integration", 
-        desc: "Consulting and deployment of artificial intelligence (NLP & Computer Vision) using advanced RAG architectures. Specialized in optimizing on-premise local models for multimodal analysis and document extraction while safeguarding data privacy[cite: 1, 2]." 
+        desc: "Consulting and deployment of artificial intelligence (NLP & Computer Vision) using advanced RAG architectures. Specialized in optimizing on-premise local models for multimodal analysis and document extraction while safeguarding data privacy." 
       },
       { 
         title: "Full-Stack Web Development", 
-        desc: "End-to-end engineering of responsive and scalable custom web applications built from scratch[cite: 1]. Handling complex backend architectures, API integrations, and rigorous data integrity with modern frontends[cite: 1, 4]." 
+        desc: "End-to-end engineering of responsive and scalable custom web applications built from scratch. Handling complex backend architectures, API integrations, and rigorous data integrity with modern frontends." 
       },
       { 
         title: "System Automation & Testing", 
-        desc: "Development of autonomous AI agents and intelligent scripts designed to eliminate repetitive workflows[cite: 1]. Providing advanced web scraping solutions and hands-free usability UI testing driven by Vision-Language Models[cite: 1]." 
+        desc: "Development of autonomous AI agents and intelligent scripts designed to eliminate repetitive workflows. Providing advanced web scraping solutions and hands-free usability UI testing driven by Vision-Language Models." 
       }
     ],
     projectsBadge: "Track Record",
