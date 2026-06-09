@@ -1,3 +1,6 @@
+import cvIndonesia from '../assets/CV_Satria_Hadi_Wiyana_ID.pdf';
+import cvEnglish from '../assets/CV_Satria_Hadi_Wiyana_EN.pdf';
+
 export const content = {
   id: {
     nav: {
@@ -37,7 +40,8 @@ export const content = {
       dynamicWords: ["Model AI", "Sistem Web", "Fitur NLP", "LLM Lokal", "Agen Visual"],
       desc: "Merancang ekosistem perangkat lunak cerdas secara end-to-end. Memadukan arsitektur AI (NLP & Computer Vision) dengan pengembangan web untuk menghasilkan sistem yang scalable, efisien, dan memprioritaskan privasi data melalui inferensi model lokal.",
       btn1: "Jadwalkan Sesi Konsultasi",
-      btn2: "Unduh CV \u2192"
+      btn2: "Unduh CV \u2192",
+      cvLink: cvIndonesia
     },
     stats: {
       badge: "Kinerja Terukur",
@@ -193,7 +197,8 @@ export const content = {
       dynamicWords: ["AI Models", "Web Systems", "NLP Features", "Local LLMs", "Vision Agents"],
       desc: "Designing end-to-end intelligent software ecosystems. Combining AI architecture (NLP & Computer Vision) with web development to produce scalable, efficient systems prioritizing data privacy through local model inference.",
       btn1: "Schedule a Consultation",
-      btn2: "Download CV \u2192"
+      btn2: "Download CV \u2192",
+      cvLink: cvEnglish
     },
     stats: {
       badge: "Measurable Performance",

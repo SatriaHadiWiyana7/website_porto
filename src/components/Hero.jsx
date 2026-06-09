@@ -4,6 +4,7 @@ import { useLang } from '../context/LangContext';
 import { content } from '../data/content';
 import profileImg from '../assets/Casual.webp'; 
 
+
 export default function Hero() {
   const { lang } = useLang();
   const t = content[lang].hero;
@@ -85,9 +86,9 @@ export default function Hero() {
             {t.btn1}
           </a>
           <a 
-            href="/CV_Satria_Hadi_Wiyana.pdf" 
-            target="_blank" 
-            className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 rounded-full font-bold hover:border-[#0ea5e9] hover:text-[#0ea5e9] hover:bg-sky-50 transition-all duration-300 text-center flex items-center justify-center gap-2"
+            href={t.cvLink} 
+            download
+            className="px-6 py-3 border border-slate-300 rounded-full text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all duration-300 flex items-center gap-2"
           >
             {t.btn2}
           </a>
