@@ -72,55 +72,73 @@ export const content = {
     projectsTitle: "Studi Kasus & Eksekusi Sistem",
     projectsDesc: "Menerjemahkan arsitektur kompleks menjadi solusi digital yang terukur. Berikut adalah beberapa implementasi dari optimasi model lokal hingga sistem manajemen terpadu.",
     projects: [
-      { 
-        title: "M-RAG Legal Assistant", 
-        desc: "Mendefinisikan ulang ekstraksi dokumen hukum tanpa OCR. Dibangun menggunakan arsitektur Parent-Child Retriever dan Vision-Language Models terintegrasi.", 
-        tech: ["Python", "Llama 3.2 Vision", "NLP", "RAG"], 
-        link: "#" 
-      },
-      {
-        title: "TryLab AI Mobile Tester",
-        desc: "Menghadirkan otomatisasi pengujian usability aplikasi mobile melalui agen AI otonom. Berbekal Vision-Language Models, sistem ini mampu menginterpretasikan elemen visual antarmuka dan bernavigasi secara mandiri untuk menyusun laporan interaksi tanpa campur tangan manusia.",
-        tech: ["Python", "Llama 3.2 Vision", "Qwen-VL", "VLM"],
-        link: "#"
-      },
-      {
-        title: "Urban Traffic AI Coordinator",
-        desc: "Memecahkan kompleksitas kemacetan perkotaan melalui arsitektur kecerdasan buatan hierarkis. Sistem ini membangun representasi jaringan secara global untuk memberikan direktif strategis dan mengoptimalkan aliran kendaraan antartitik secara dinamis.",
-        tech: ["Reinforcement Learning", "GNN", "PPO", "Python"],
-        link: "#"
-      },
-      {
-        title: "FinTime (Financial Time Machine)",
-        desc: "Merevolusi kebiasaan finansial masa muda lewat platform yang memprediksi kondisi keuangan masa depan. Memadukan model time-series forecasting dan klasifikasi pintar untuk merumuskan rekomendasi bijak dengan intervensi avatar reaktif.",
-        tech: ["FastAPI", "XGBoost", "NLP", "scikit-learn"],
-        link: "#"
-      },
-      {
-        title: "M-RAG Financial Analyst",
-        desc: "Mengekstraksi wawasan berharga dari teks, tabel angka, hingga grafik pada dokumen bisnis. Sistem analisis multimodal ini merangkum data berskala besar menjadi jawaban presisi yang dilengkapi strategi penjagaan validitas informasi yang ketat.",
-        tech: ["Multimodal RAG", "ChromaDB", "LLaVA", "Python"],
-        link: "#"
-      },
-      {
-        title: "AgriRAG Smart Agriculture",
-        desc: "Mewujudkan panduan agrikultur presisi dengan sistem kecerdasan buatan terintegrasi. Platform ini mendiagnosis anomali tanaman dan meracik rekomendasi perawatan secara akurat berbekal basis data vektor dan model bahasa lokal.",
-        tech: ["LangChain", "RAG", "Local LLM", "Vector DB"],
-        link: "#"
-      },
-      {
-        title: "CekKontrak Legal NLP",
-        desc: "Mengotomatisasi peninjauan kontrak kerja sama skala bisnis untuk memetakan anomali teks dan meminimalkan risiko tersembunyi. Model ini dilatih khusus untuk mengekstraksi informasi krusial dan menganalisis klausul perjanjian secara instan.",
-        tech: ["Python", "NLP", "Machine Learning"],
-        link: "#"
-      },
-      {
-        title: "SIMBATRAS Ecosystem",
-        desc: "Membangun ekosistem platform manajemen lingkungan secara end-to-end. Dilengkapi dengan antarmuka dinamis untuk otomatisasi pelacakan saldo, komputasi laporan finansial, dan pemeliharaan integritas data berkinerja tinggi.",
-        tech: ["Laravel", "React", "PHP", "JavaScript"],
-        link: "#"
-      }
-    ],
+    {
+      title: "Opticargo – Agentic GraphRAG Maritime Logistics",
+      desc: "Mengarahkan delivery platform logistik maritim berbasis AI dari requirement/PRD hingga readiness implementasi. Sistem mengintegrasikan data supply, retrieval/vector, knowledge graph, dan AI agents dengan quality gate untuk menjaga konsistensi arsitektur.",
+      tech: ["Agentic AI", "GraphRAG", "Knowledge Graph", "Python"],
+      link: "#"
+    },
+    {
+      title: "TryLab AI Mobile Tester",
+      desc: "Mengembangkan AI agent otonom untuk mengotomatisasi pengujian usability aplikasi mobile menggunakan Vision-Language Models. Sistem memahami elemen visual antarmuka, bernavigasi menggunakan ADB, dan menghasilkan laporan interaksi berdasarkan persona pengguna.",
+      tech: ["Python", "Llama 3.2 Vision", "Qwen-VL", "VLM"],
+      link: "#"
+    },
+    {
+      title: "M-RAG Financial Analyst",
+      desc: "Merancang sistem Multimodal Retrieval-Augmented Generation untuk menganalisis laporan tahunan emiten IDX berskala ratusan halaman. Sistem mendukung retrieval informasi dari teks dan tabel, perbandingan metrik finansial, serta verifikasi jawaban terhadap sumber PDF.",
+      tech: ["Multimodal RAG", "Hybrid Retrieval", "Python", "Streamlit"],
+      link: "#"
+    },
+    {
+      title: "M-RAG Legal Assistant",
+      desc: "Mengembangkan sistem intelligent document processing untuk dokumen hukum menggunakan pendekatan Parent-Child Retriever dan Vision-Language Models untuk memahami serta mengekstraksi informasi dari dokumen kompleks.",
+      tech: ["Python", "Llama 3.2 Vision", "NLP", "RAG"],
+      link: "#"
+    },
+    {
+      title: "PANGAN-ALERT – Explainable Spatio-Temporal Early Warning",
+      desc: "Mengembangkan sistem peringatan dini untuk memprediksi penurunan Indeks Ketahanan Pangan pada 514 kabupaten/kota Indonesia. Pipeline menggabungkan data CHIRPS v3, ERA5-Land, fitur IKP temporal, dan fitur spasial berbasis KNN-5.",
+      tech: ["Python", "Machine Learning", "GeoPandas", "SHAP"],
+      link: "#"
+    },
+    {
+      title: "Sustainability Resilience Intelligence – Rice Seed Supply Chain",
+      desc: "Membangun sistem intelligence untuk menganalisis ketahanan rantai pasok benih padi Bali dengan menggabungkan bottleneck analysis, SHAP importance, dan actor-gap analysis menjadi priority composite, simulasi intervensi, serta Resilience Scorer + Optimizer.",
+      tech: ["Random Forest", "SHAP", "Data Science", "Dashboard"],
+      link: "#"
+    },
+    {
+      title: "Urban Traffic AI Coordinator",
+      desc: "Mengembangkan arsitektur AI hierarkis untuk mengoptimalkan aliran kendaraan pada jaringan lalu lintas perkotaan menggunakan representasi jaringan global dan pendekatan Reinforcement Learning.",
+      tech: ["Reinforcement Learning", "GNN", "PPO", "Python"],
+      link: "#"
+    },
+    {
+      title: "FinTime (Financial Time Machine)",
+      desc: "Mengembangkan platform yang memprediksi kondisi keuangan masa depan menggunakan time-series forecasting dan machine learning classification untuk menghasilkan rekomendasi berbasis kondisi finansial.",
+      tech: ["FastAPI", "XGBoost", "NLP", "scikit-learn"],
+      link: "#"
+    },
+    {
+      title: "AgriRAG Smart Agriculture",
+      desc: "Membangun sistem AI untuk precision agriculture yang menggabungkan RAG, Local LLM, LangChain, dan Vector Database untuk mendukung diagnosis anomali tanaman serta rekomendasi perawatan.",
+      tech: ["LangChain", "RAG", "Local LLM", "Vector DB"],
+      link: "#"
+    },
+    {
+      title: "CekKontrak Legal NLP",
+      desc: "Mengembangkan sistem NLP untuk mengotomatisasi review kontrak bisnis, mengekstraksi informasi penting, serta membantu mengidentifikasi anomali dan risiko pada klausul perjanjian.",
+      tech: ["Python", "NLP", "Machine Learning"],
+      link: "#"
+    },
+    {
+      title: "SIMBATRAS Ecosystem",
+      desc: "Membangun ekosistem platform manajemen lingkungan secara end-to-end dengan antarmuka dinamis untuk otomatisasi pelacakan saldo, komputasi laporan finansial, dan pengelolaan integritas data.",
+      tech: ["Laravel", "React", "PHP", "JavaScript"],
+      link: "#"
+    }
+  ],
     processBadge: "Workflow",
     processTitle: "Bagaimana Saya Bekerja",
     process: [
