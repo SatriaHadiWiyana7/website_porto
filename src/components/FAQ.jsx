@@ -1,48 +1,34 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { Plus, ArrowUpRight } from 'lucide-react';
 import { useLang } from '../context/LangContext';
 import { content } from '../data/content';
+import { Parallax } from './Parallax';
 
 export default function FAQ() {
   const { lang } = useLang();
   const t = content[lang];
-  const [openIndex, setOpenIndex] = useState(null);
-
+  const [openIndex, setOpenIndex] = useState(0);
   return (
-    <section id="faq" className="py-24 px-6 bg-slate-50">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-black text-slate-900 mb-4">{t.faqTitle}</h2>
-          <p className="text-slate-500">{t.faqDesc}</p>
-        </div>
-
-        <div className="space-y-4">
-          {t.faqs.map((faq, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 hover:border-slate-300 hover:shadow-sm">
-              <button 
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none"
-              >
-                <span className="font-bold text-slate-900 pr-4">{faq.q}</span>
-                <ChevronDown className={`text-slate-400 shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} />
-              </button>
-              
-              <AnimatePresence>
-                {openIndex === i && (
-                  <motion.div 
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="px-6 pb-5 text-slate-600 text-sm leading-relaxed"
-                  >
-                    {faq.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+    <section id="faq" className="support-section faq-section" aria-labelledby="faq-title">
+      <div className="section-shell faq-layout">
+        <Parallax speed={20} className="faq-intro">
+          <span className="eyebrow"><span className="section-dot" />FAQ</span>
+          <h2 id="faq-title" className="section-heading">{t.faqTitle}</h2>
+          <p>{t.faqDesc}</p>
+          <a className="service-link" href="#booking">{lang === 'id' ? 'Mari berbincang' : 'Let’s talk'}<ArrowUpRight size={17} /></a>
+        </Parallax>
+        <Parallax speed={10} className="faq-list">
+          {t.faqs.map((faq, index) => (
+            <div key={index} className={`faq-item ${openIndex === index ? 'is-open' : ''}`}>
+              <h3>
+                <button type="button" id={`faq-question-${index}`} aria-expanded={openIndex === index} aria-controls={`faq-answer-${index}`} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+                  <span className="faq-number">0{index + 1}</span><span>{faq.q}</span><Plus size={19} aria-hidden="true" />
+                </button>
+              </h3>
+              <div id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`} hidden={openIndex !== index} className="faq-answer"><p>{faq.a}</p></div>
             </div>
           ))}
-        </div>
+        </Parallax>
       </div>
     </section>
   );

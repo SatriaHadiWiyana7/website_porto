@@ -1,0 +1,39 @@
+.about-section { background: #11130f; }
+.about-section .section-shell { padding-block: 145px; }
+.about-layout { gap: 90px; align-items: center; }
+.about-statement-scene { position: relative; min-width: 0; perspective: 1600px; }
+.about-backplane { position: absolute; inset: -24px 25px 26px -18px; pointer-events: none; border: 1px solid #5a6050; background: #171a13; }
+.about-title-plane { padding: 36px 34px 42px; background: #22261c; border: 1px solid #444b38; box-shadow: 18px 28px 55px #0002; }
+.about-title-plane .editorial-label { color: #b1b5a6; }
+.about-title-plane h2 { font-size: clamp(32px, 3.25vw, 46px); }
+.about-details { padding-top: 0; }
+.about-focus { padding-top: 28px; }
+.contact-section { overflow: clip; }
+.contact-section .section-shell { padding-block: 130px; }
+.contact-intro-scene { position: relative; min-width: 0; }
+.contact-intro { padding-block: 14px; }
+.contact-depth-rule { position: absolute; inset: -42px 35px -36px -32px; border-left: 1px solid #555a46; border-top: 1px solid #555a46; pointer-events: none; }
+.contact-depth-rule > span { position: absolute; width: 42%; height: 110%; top: 24px; left: -18px; border-left: 1px solid #343a2b; border-top: 1px solid #343a2b; transform: translateZ(-60px); }
+.contact-form-wrap { position: relative; min-width: 0; }
+.footer-signature-scene { position: relative; padding: 20px 0 45px; border-bottom: 1px solid var(--line); margin-bottom: 38px; }
+.footer-signature { width: fit-content; font-size: clamp(96px, 15.6vw, 224px); font-weight: 400; line-height: .98; letter-spacing: -.08em; transform-origin: left center; }
+.footer-signature > .text-reveal { color: #eeeae3; }
+@media (max-width: 1000px) {
+  .about-layout { gap: 62px; }
+  .about-title-plane { padding: 28px 25px 32px; }
+  .contact-depth-rule { left: -20px; }
+}
+@media (max-width: 767px) {
+  .about-section .section-shell { padding-top: 102px; padding-bottom: 92px; }
+  .about-layout { gap: 64px; }
+  .about-backplane { inset: -16px 17px 20px -10px; }
+  .about-title-plane { padding: 28px 24px 32px; }
+  .about-title-plane h2 { font-size: clamp(30px, 6.5vw, 43px); line-height: 1.25; }
+  .contact-section .section-shell { padding-top: 98px; padding-bottom: 80px; }
+  .contact-layout { gap: 65px; }
+  .contact-depth-rule { inset: -26px 25px -15px -10px; }
+  .contact-depth-rule > span { left: -8px; }
+  .contact-intro { padding-left: 8px; }
+  .footer-signature-scene { padding-top: 14px; padding-bottom: 35px; margin-bottom: 32px; }
+  .footer-signature { font-size: clamp(92px, 24vw, 180px); }
+}

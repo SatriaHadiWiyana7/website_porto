@@ -1,0 +1,92 @@
+﻿:where(.parallax-layer) {
+  position: relative;
+}
+
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.tilt-card [data-depth] {
+  transform: translateZ(calc(var(--layer-depth, 24px) * var(--depth-scale, 1)));
+  transform-style: preserve-3d;
+}
+
+.tilt-card :is(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid #c5ae91;
+  outline-offset: 6px;
+}
+
+.scene-background {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #10110f;
+  contain: strict;
+}
+
+.scene-light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 65% 12%, rgb(197 174 145 / 3%), transparent 62%);
+}
+
+.scene-plane {
+  position: absolute;
+  border: 1px solid rgb(238 234 227 / 2.8%);
+  background: rgb(238 234 227 / 0.6%);
+}
+
+.scene-plane--far {
+  width: 35vw;
+  height: 160vh;
+  top: -30vh;
+  right: -14vw;
+}
+
+.scene-plane--near {
+  width: 70vw;
+  height: 90vh;
+  bottom: -78vh;
+  left: -25vw;
+  background: rgb(197 174 145 / 1%);
+}
+
+@media (max-width: 767px) {
+  .scene-plane--far { right: -26vw; width: 50vw; }
+  .scene-plane--near { display: none; }
+}
+
+html[data-motion='off'] {
+  scroll-behavior: auto !important;
+}
+
+html[data-motion='off'] *,
+html[data-motion='off'] *::before,
+html[data-motion='off'] *::after {
+  animation: none !important;
+  transition-duration: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-motion='off'] :is(.parallax-layer, .tilt-card),
+html[data-motion='off'] .tilt-card [data-depth] {
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .parallax-layer, .tilt-card, .tilt-card [data-depth] {
+    transform: none !important;
+  }
+}
+

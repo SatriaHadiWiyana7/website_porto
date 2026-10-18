@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#e2e6e8"/>
+  <g font-family="Arial, sans-serif">
+    <text x="90" y="105" font-size="24" fill="#687780" letter-spacing="3">QUANTRAG–IDX / DOCUMENT INTELLIGENCE</text>
+    <text x="85" y="204" font-size="68" fill="#253540" letter-spacing="-3">Jawaban dengan sumber.</text>
+    <path d="M90 250H1510" stroke="#b9c5ca"/>
+    <rect x="119" y="341" width="280" height="390" transform="rotate(-5 119 341)" fill="#ccd5d9" stroke="#aebdc4"/>
+    <rect x="132" y="328" width="280" height="390" fill="#f5f6f4" stroke="#b5c2c8"/>
+    <text x="159" y="377" font-size="20" fill="#687780">LAPORAN TAHUNAN</text>
+    <path d="M159 410H383M159 434H337" stroke="#c0cbd0" stroke-width="7"/>
+    <rect x="159" y="471" width="225" height="110" fill="#e4e9eb"/>
+    <path d="M159 501H384M159 531H384M231 471V581M306 471V581" stroke="#b5c2c8"/>
+    <path d="M159 619H383M159 642H345M159 665H372" stroke="#c0cbd0" stroke-width="7"/>
+    <text x="151" y="782" font-size="24" fill="#687780">Teks · Tabel · Grafik</text>
+    <path d="M448 524H558M542 514L558 524L542 534" stroke="#728a97" stroke-width="2"/>
+    <rect x="592" y="351" width="382" height="104" fill="#cbd7dd"/>
+    <text x="620" y="397" font-size="20" fill="#687780">01 / INDEXING</text>
+    <text x="620" y="431" font-size="28" fill="#253540">ChromaDB</text>
+    <path d="M783 464V494" stroke="#728a97" stroke-width="2"/>
+    <rect x="592" y="504" width="382" height="104" fill="#b7cad3"/>
+    <text x="620" y="550" font-size="20" fill="#586e7a">02 / HYBRID RETRIEVAL</text>
+    <text x="620" y="584" font-size="28" fill="#253540">Dense + BM25 → RRF</text>
+    <path d="M783 618V648" stroke="#728a97" stroke-width="2"/>
+    <rect x="592" y="658" width="382" height="104" fill="#9eb8c6"/>
+    <text x="620" y="704" font-size="20" fill="#3e5866">03 / RERANKING</text>
+    <text x="620" y="738" font-size="28" fill="#253540">Konteks yang relevan</text>
+    <path d="M1003 710H1073V524H1130M1114 514L1130 524L1114 534" stroke="#728a97" stroke-width="2"/>
+    <rect x="1166" y="351" width="302" height="413" fill="#f5f6f4" stroke="#b5c2c8"/>
+    <text x="1196" y="402" font-size="20" fill="#687780">GENERATED ANSWER</text>
+    <path d="M1196 430H1438" stroke="#b5c2c8"/>
+    <text x="1196" y="489" font-size="30" fill="#253540">Jawaban</text>
+    <path d="M1196 519H1438M1196 542H1415M1196 565H1382" stroke="#c0cbd0" stroke-width="7"/>
+    <rect x="1196" y="613" width="242" height="113" fill="#e2e9ec"/>
+    <text x="1214" y="655" font-size="23" fill="#3e5866">Dokumen sumber</text>
+    <text x="1214" y="696" font-size="23" fill="#3e5866">Sitasi halaman</text>
+    <path d="M90 870H1510" stroke="#b9c5ca"/>
+    <text x="90" y="925" font-size="22" fill="#687780">Arsitektur berdasarkan dokumentasi QuantRAG-IDX</text>
+    <text x="1510" y="925" text-anchor="end" font-size="22" fill="#687780">MULTIMODAL RAG</text>
+  </g>
+</svg>

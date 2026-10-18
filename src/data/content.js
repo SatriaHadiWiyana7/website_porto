@@ -1,5 +1,5 @@
-import cvIndonesia from '../assets/CV_Satria_Hadi_Wiyana_ID.pdf';
-import cvEnglish from '../assets/CV_Satria_Hadi_Wiyana_EN.pdf';
+import cvIndonesia from '../assets/CV_SATRIA_HADI_WIYANA_ID.pdf';
+import cvEnglish from '../assets/CV_SATRIA_HADI_WIYANA_EN.pdF';
 
 export const content = {
   id: {
@@ -263,6 +263,24 @@ export const content = {
     projectsTitle: "Case Studies & Execution",
     projectsDesc: "Translating complex architectures into scalable digital solutions. Here are some implementations from local model optimization to integrated management systems.",
     projects: [
+      {
+        title: "Opticargo – Agentic GraphRAG Maritime Logistics",
+        desc: "Directed delivery of an AI maritime logistics platform from requirements and PRD to implementation readiness. The system connects supply data, vector retrieval, knowledge graphs, and AI agents, with quality gates that keep the architecture consistent.",
+        tech: ["Agentic AI", "GraphRAG", "Knowledge Graph", "Python"],
+        link: "#"
+      },
+      {
+        title: "PANGAN-ALERT – Explainable Spatio-Temporal Early Warning",
+        desc: "Developed an early warning system to predict declines in the Food Security Index across 514 Indonesian districts and cities. The pipeline combines CHIRPS v3, ERA5-Land, temporal food-security features, and KNN-5 spatial features.",
+        tech: ["Python", "Machine Learning", "GeoPandas", "SHAP"],
+        link: "#"
+      },
+      {
+        title: "Sustainability Resilience Intelligence – Rice Seed Supply Chain",
+        desc: "Built an intelligence system to analyze the resilience of Bali's rice seed supply chain. It combines bottleneck analysis, SHAP importance, and actor-gap analysis into a priority composite, intervention simulations, and a Resilience Scorer + Optimizer.",
+        tech: ["Random Forest", "SHAP", "Data Science", "Dashboard"],
+        link: "#"
+      },
       { 
         title: "M-RAG Legal Assistant", 
         desc: "Redefining legal document extraction without relying on traditional OCR. Built using a Parent-Child Retriever architecture integrated with Vision-Language Models.", 

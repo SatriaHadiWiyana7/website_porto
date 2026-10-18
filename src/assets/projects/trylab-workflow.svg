@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#e8e5dc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="90" y="105" font-size="24" fill="#72746a" letter-spacing="3">TRYLAB / MOBILE TESTING</text>
+    <text x="85" y="204" font-size="68" fill="#252a23" letter-spacing="-3">Dari layar ke laporan.</text>
+    <path d="M90 250H1510" stroke="#bdc0b3"/>
+    <rect x="116" y="330" width="296" height="480" rx="38" fill="#252a23"/>
+    <rect x="130" y="345" width="268" height="450" rx="27" fill="#f7f5ef"/>
+    <path d="M228 366H300" stroke="#252a23" stroke-width="6" stroke-linecap="round"/>
+    <rect x="151" y="409" width="226" height="118" rx="4" fill="#d8dccf"/>
+    <path d="M173 490L219 448L264 477L300 440L355 490" stroke="#9aa48f" stroke-width="2"/>
+    <path d="M151 562H329M151 582H294M151 628H377M151 655H377" stroke="#c7cabf" stroke-width="8"/>
+    <rect x="151" y="698" width="226" height="49" rx="3" fill="#bec8ad"/>
+    <rect x="142" y="689" width="244" height="67" rx="6" stroke="#61774d" stroke-width="2" stroke-dasharray="6 6"/>
+    <circle cx="367" cy="701" r="17" fill="#61774d"/>
+    <path d="M359 701H375M367 693V709" stroke="#fff" stroke-width="2"/>
+    <path d="M448 525H568M552 515L568 525L552 535" stroke="#777f6c" stroke-width="2"/>
+    <text x="475" y="495" font-size="20" fill="#72746a">Layar</text>
+    <rect x="603" y="412" width="378" height="226" fill="#d6dbcb"/>
+    <text x="637" y="462" font-size="20" fill="#6c775f" letter-spacing="2">VISION–LANGUAGE MODEL</text>
+    <text x="637" y="526" font-size="36" fill="#252a23" letter-spacing="-1">Memahami konteks.</text>
+    <text x="637" y="575" font-size="25" fill="#59634e">Menentukan aksi berikutnya.</text>
+    <path d="M792 662V728H448M465 718L448 728L465 738" stroke="#777f6c" stroke-width="2"/>
+    <text x="610" y="772" font-size="22" fill="#72746a">Aksi melalui ADB</text>
+    <path d="M1015 525H1130M1114 515L1130 525L1114 535" stroke="#777f6c" stroke-width="2"/>
+    <rect x="1166" y="350" width="302" height="392" fill="#f7f5ef" stroke="#c1c5b7"/>
+    <text x="1196" y="403" font-size="21" fill="#72746a">CATATAN PENGUJIAN</text>
+    <path d="M1196 434H1438" stroke="#c1c5b7"/>
+    <text x="1196" y="485" font-size="26" fill="#252a23">Persona pengguna</text>
+    <path d="M1196 510H1390" stroke="#c7cabf" stroke-width="6"/>
+    <text x="1196" y="565" font-size="26" fill="#252a23">Urutan interaksi</text>
+    <path d="M1196 590H1390" stroke="#c7cabf" stroke-width="6"/>
+    <text x="1196" y="645" font-size="26" fill="#252a23">Temuan usability</text>
+    <path d="M1196 670H1390" stroke="#c7cabf" stroke-width="6"/>
+    <path d="M90 870H1510" stroke="#bdc0b3"/>
+    <text x="90" y="925" font-size="22" fill="#72746a">Alur konseptual berdasarkan deskripsi proyek</text>
+    <text x="1510" y="925" text-anchor="end" font-size="22" fill="#72746a">VLM + ADB</text>
+  </g>
+</svg>

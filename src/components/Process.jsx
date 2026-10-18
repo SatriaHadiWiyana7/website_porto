@@ -1,45 +1,38 @@
-import { motion } from 'framer-motion';
 import { useLang } from '../context/LangContext';
-import { content } from '../data/content';
+import { Parallax } from './Parallax';
+import TextReveal from './TextReveal';
+
+const steps = {
+  id: [
+    { title: 'Memahami kebutuhan', description: 'Membahas tujuan proyek, memetakan data yang tersedia, dan menentukan kebutuhan arsitektur serta infrastruktur.' },
+    { title: 'Membangun dan mengintegrasikan', description: 'Mengeksplorasi data, mengembangkan model atau logika aplikasi, lalu menghubungkannya dengan antarmuka web.' },
+    { title: 'Menguji dan menyiapkan rilis', description: 'Memeriksa fungsionalitas dan integritas data sebelum menyiapkan aplikasi untuk digunakan di lingkungan produksi.' },
+  ],
+  en: [
+    { title: 'Understand the requirements', description: 'Discuss the project’s goals, map the available data, and define architecture and infrastructure requirements.' },
+    { title: 'Build and integrate', description: 'Explore the data, develop models or application logic, and connect them to the web interface.' },
+    { title: 'Test and prepare for release', description: 'Check functionality and data integrity before preparing the application for use in production.' },
+  ],
+};
 
 export default function Process() {
   const { lang } = useLang();
-  const t = content[lang];
-
   return (
-    <section id="process" className="py-32 px-6 max-w-6xl mx-auto bg-white">
-      <div className="text-center mb-20">
-        <span className="text-[#0ea5e9] font-mono text-sm font-bold tracking-widest uppercase">
-          {t.processBadge}
-        </span>
-        <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-4 tracking-tight">
-          {t.processTitle}
-        </h2>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-        <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-slate-100 z-0"></div>
-
-        {t.process.map((step, i) => (
-          <motion.div 
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.2 }}
-            className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left group cursor-default"
-          >
-            <div className="w-24 h-24 bg-white border-8 border-slate-50 text-slate-900 group-hover:border-sky-50 group-hover:text-[#0ea5e9] rounded-full flex items-center justify-center text-3xl font-black mb-8 shadow-sm transition-all duration-300 transform group-hover:scale-105">
-              {step.num}
-            </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-[#0ea5e9] transition-colors duration-300">
-              {step.title}
-            </h3>
-            <p className="text-slate-500 leading-relaxed text-sm">
-              {step.desc}
-            </p>
-          </motion.div>
-        ))}
+    <section id="process" className="support-section process-section" aria-labelledby="process-title">
+      <div className="section-shell">
+        <Parallax speed={28} horizontal={12} rotateY={-3} className="editorial-heading work-section-heading">
+          <h2 id="process-title"><TextReveal mode="focus">{lang === 'id' ? 'Cara saya bekerja' : 'How I work'}</TextReveal></h2>
+        </Parallax>
+        <div className="process-depth-layout">
+          {steps[lang].map((step, index) => (
+            <article key={step.title} className="process-column">
+              <Parallax speed={-24 - index * 7} rotateX={8} rotateY={index === 1 ? 6 : -6} className="process-guide" aria-hidden="true"><span /><span /></Parallax>
+              <Parallax speed={52 + index * 10} horizontal={index === 1 ? 8 : -8} rotateX={7} rotateY={index === 1 ? -7 : 7} className="process-depth-number" aria-hidden="true"><span>0{index + 1}</span></Parallax>
+              <Parallax speed={26 + index * 8} rotateY={index === 1 ? -3 : 3} className="process-depth-title"><h3>{step.title}</h3></Parallax>
+              <Parallax speed={10 + index * 5} rotateY={1} className="process-depth-description"><p>{step.description}</p></Parallax>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

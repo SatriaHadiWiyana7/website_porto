@@ -1,71 +1,66 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useLang } from '../context/LangContext';
-import { content } from '../data/content';
-import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const { lang, setLang } = useLang();
-  const t = content[lang].nav;
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: t.services, href: '#services' },
-    { name: t.portfolio, href: '#projects' },
-    { name: t.workflow, href: '#process' },
-    { name: t.reviews, href: '#testimonial' },
-    { name: t.faq, href: '#faq' },
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('');
+  const menuButton = useRef(null);
+  const isId = lang === 'id';
+  const links = [
+    { name: isId ? 'Proyek' : 'Work', id: 'projects' },
+    { name: isId ? 'Tentang' : 'About', id: 'about' },
+    { name: isId ? 'Keahlian' : 'Expertise', id: 'services' },
   ];
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
+    }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
+    document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+    return () => { window.removeEventListener('scroll', onScroll); observer.disconnect(); };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') { setOpen(false); menuButton.current?.focus(); }
+    };
+    const media = window.matchMedia('(min-width: 768px)');
+    const onResize = () => { if (media.matches) setOpen(false); };
+    document.addEventListener('keydown', onKeyDown);
+    media.addEventListener('change', onResize);
+    return () => { document.removeEventListener('keydown', onKeyDown); media.removeEventListener('change', onResize); };
+  }, [open]);
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-black text-slate-900 tracking-tighter">SHW<span className="text-[#0ea5e9]">.</span></a>
-
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, i) => (
-            <a key={i} href={link.href} className="text-sm font-bold text-slate-600 hover:text-[#0ea5e9] transition-colors">{link.name}</a>
-          ))}
+    <header className={`site-header ${scrolled || open ? 'is-scrolled' : ''}`}>
+      <nav className="nav-inner" aria-label={isId ? 'Navigasi utama' : 'Main navigation'}>
+        <a href="#home" className="wordmark" aria-label="Satria Hadi Wiyana" onClick={() => setOpen(false)}>Satria<span>.</span></a>
+        <div className="desktop-links">
+          {links.map((link) => <a key={link.id} href={`#${link.id}`} className={active === link.id ? 'is-active' : ''} aria-current={active === link.id ? 'location' : undefined}>{link.name}</a>)}
         </div>
-
-        {/* Tombol Bahasa (Sekarang 100% responsif terhadap klik) */}
-        <div className="hidden md:flex items-center">
-          <div className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200">
-            <button onClick={() => setLang('id')} className={`px-3 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${lang === 'id' ? 'bg-slate-900 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`}>ID</button>
-            <button onClick={() => setLang('en')} className={`px-3 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${lang === 'en' ? 'bg-slate-900 text-white shadow-md' : 'text-slate-400 hover:text-slate-600'}`}>EN</button>
+        <div className="nav-tools">
+          <div className="language-control" role="group" aria-label={isId ? 'Bahasa' : 'Language'}>
+            <button lang="id" aria-pressed={lang === 'id'} onClick={() => setLang('id')}>ID</button>
+            <span>/</span>
+            <button lang="en" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
           </div>
+          <a className="nav-contact" href="#booking">{isId ? 'Kontak' : 'Contact'}<ArrowUpRight size={16} /></a>
+          <button ref={menuButton} className="menu-toggle" aria-label={isId ? (open ? 'Tutup menu' : 'Buka menu') : (open ? 'Close menu' : 'Open menu')} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-
-        <button className="md:hidden text-slate-900" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Menu Mobile */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4 md:hidden">
-            {navLinks.map((link, i) => (
-              <a key={i} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-bold text-slate-600 hover:text-[#0ea5e9]">{link.name}</a>
-            ))}
-            <div className="h-px bg-slate-100 my-2"></div>
-            <div className="flex items-center justify-between">
-              <span className="font-bold text-slate-600">Language</span>
-              <div className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200">
-                <button onClick={() => setLang('id')} className={`px-4 py-1.5 text-xs font-bold rounded-full ${lang === 'id' ? 'bg-slate-900 text-white' : 'text-slate-400'}`}>ID</button>
-                <button onClick={() => setLang('en')} className={`px-4 py-1.5 text-xs font-bold rounded-full ${lang === 'en' ? 'bg-slate-900 text-white' : 'text-slate-400'}`}>EN</button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+        <div id="mobile-navigation" className="mobile-navigation" hidden={!open}>
+          {links.map((link) => <a key={link.id} href={`#${link.id}`} onClick={() => setOpen(false)}>{link.name}<ArrowUpRight size={18} /></a>)}
+          <a href="#booking" onClick={() => setOpen(false)}>{isId ? 'Kontak' : 'Contact'}<ArrowUpRight size={18} /></a>
+        </div>
+      </nav>
+    </header>
   );
 }

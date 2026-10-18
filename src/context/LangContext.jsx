@@ -1,21 +1,20 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
-// Membuat Context
 const LangContext = createContext();
-
-// Provider yang akan membungkus aplikasi
 export function LangProvider({ children }) {
-  // State bahasa default: 'id' (Indonesia)
   const [lang, setLang] = useState('id');
-
-  return (
-    <LangContext.Provider value={{ lang, setLang }}>
-      {children}
-    </LangContext.Provider>
-  );
+  const [storageReady, setStorageReady] = useState(false);
+  useEffect(() => {
+    try { if (localStorage.getItem('shw-language') === 'en') setLang('en'); }
+    catch { /* Storage is optional. */ }
+    setStorageReady(true);
+  }, []);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    if (storageReady) {
+      try { localStorage.setItem('shw-language', lang); } catch { /* Storage is optional. */ }
+    }
+  }, [lang, storageReady]);
+  return <LangContext.Provider value={{ lang, setLang }}>{children}</LangContext.Provider>;
 }
-
-// Custom hook agar komponen mudah mengambil data bahasa
-export function useLang() {
-  return useContext(LangContext);
-}
+export function useLang() { return useContext(LangContext); }
